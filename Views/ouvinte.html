@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="row"></div>
+  <div class="col s10 z-depth-2 offset-s1">
+
+    <div class="row">
+      <h5 class="center">Ficha de Inscrição - {{ouvinte.nome}}</h5>
+      <div class="divider"></div>
+    </div>
+
+    <form name="participanteForm" id="participanteForm" novalidate class="form-validar">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input id="nome" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="nome" ng-model="ouvinte.nome" required>
+          <label for="nome" class="active">Nome</label>
+          <li ng-show="participanteForm.nome.$error.required">Por favor, preencha o campo Nome</li>
+          <li ng-show="participanteForm.nome.$error.pattern">Por favor, digite um Nome no formato de A a Z</li>
+
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="sobrenome" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="sobrenome" ng-model="ouvinte.sobrenome" required>
+          <label for="sobrenome" class="active">Sobrenome</label>
+          <li ng-show="participanteForm.sobrenome.$error.required">Por favor, preencha o campo Sobrenome</li>
+          <li ng-show="participanteForm.sobrenome.$error.pattern">Por favor, digite um Sobrenome no formato de A a Z</li>
+        </div>
+
+      </div>
+      <div class="row ">
+        <div class="input-field col s12 m6">
+          <input id="email" type="email" class="validate" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{3,7}$/" name="email" ng-model="ouvinte.email" required>
+          <label for="email" class="active">Email</label>
+          <li ng-show="participanteForm.email.$error.required">Por favor, preencha o campo Email</li>
+          <li ng-show="participanteForm.email.$error.email">Por favor, digite um email válido</li>
+
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="telefone" type="text" ng-pattern="/^[0-9]+$/" name="telefone" ng-model="ouvinte.telefone">
+          <label for="telefone" class="active">Telefone</label>
+          <li ng-show="participanteForm.telefone.$error.required">Por favor, preencha o campo Telefone</li>
+          <li ng-show="participanteForm.telefone.$error.pattern">Por favor, digite um Telefone válido</li>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button ng-click="salvar(ouvinte)" ng-disabled="participanteForm.$invalid" class="btn waves-effect waves-light col s5" type="submit" name="action">Salvar
+            <i class="mdi-content-send right"></i>
+          </button>
+          <button ng-click="validar(ouvinte)" ng-disabled="isValidate(ouvinte.status)" class="btn waves-effect waves-light col s5 offset-s2" type="submit" name="action">Validar
+            <i class="mdi-content-send right"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row"></div>
+</div>

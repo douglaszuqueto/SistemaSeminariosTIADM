@@ -1,0 +1,116 @@
+<html ng-app="seminariosApp">
+
+<head>
+  <title>Seminários</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <noscript>
+    <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost:8080/erro_js.html">
+  </noscript>
+  <!-- CSS -->
+  <!-- Materialize -->
+  <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body >
+
+  <!-- CONTAINER -->
+  <div class="imagem white col m12">
+
+    <div class="nav-wrapper m12 s12">
+      <!-- Dropdown Structure -->
+      <nav class="blue darken-3 menu m12 s12">
+        <!-- LOGO -->
+        <a href="#/" class="brand-logo">
+          <img src="Imagens/logo_editada.png" />
+        </a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <!-- MENU -->
+        <ul class="right hide-on-med-and-down testa_menu">
+          <li><a href="#/">Página Inicial</a></li>
+          <li>
+            <a class="dropdown-button teste" href="#!" data-activates="dropdown1">
+                  Inscrições
+                  <i class="mdi-navigation-arrow-drop-down right"></i>
+                  </a>
+          </li>
+          <li><a href="#/contatosInscritos">Contato</a></li>
+        </ul>
+
+        <!-- MENU MOBILE -->
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#/">Página Inicial</a></li>
+          <li>
+            <a class="dropdown-button " href="#" data-activates="dropdown2">
+                  Inscrições
+                  <i class="mdi-navigation-arrow-drop-down right"></i>
+                  </a>
+          </li>
+          <li><a href="#/contatosInscritos">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ativa Dropdown menu 1 -->
+      <ul id="dropdown1" class="dropdown-content ">
+        <li><a href="#/ouvintesInscritos">Ouvinte</a></li>
+        <li><a href="#/artigosInscritos">Palestrante</a></li>
+      </ul>
+
+      <!-- Ativa Dropdown menu responsivo -->
+      <ul id="dropdown2" class="dropdown-content ">
+        <li><a href="#/ouvintesInscritos">Ouvinte</a></li>
+        <li><a href="#/artigosInscritos">Palestrante</a></li>
+      </ul>
+    </div>
+
+    <ng-view></ng-view>
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <!-- Angular-JS -->
+  <!-- // <script src="bower_components/angular/angular.min.js"></script> -->
+  <!-- Jquery -->
+  <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+  <!-- Materialize -->
+  <!-- // <script src="bower_components/materialize/dist/js/materialize.min.js"></script> -->
+
+  <!-- Angular Route -->
+  <!-- // <script src="bower_components/angular-route/angular-route.min.js"></script> -->
+
+  <!-- APP -->
+
+
+   <script src="build/library.js"></script>
+   <script src="build/angular.js"></script>
+  <!-- // <script src="js/app.js"></script> -->
+  <!-- // <script src="js/routes/config.js"></script> -->
+  <!-- // <script src="app_comprimido.js"></script> -->
+
+  <!-- HOME -->
+  <!-- //  <script src="js/controllers/homeCtrl.js"></script> -->
+
+  <!-- ARTIGOS -->
+  <!-- //  <script src="js/controllers/artigosInscritosCtrl.js"></script> -->
+  <!-- //  <script src="js/controllers/artigoCtrl.js"></script> -->
+  <!-- //  <script src="js/services/artigosAPI.js"></script> -->
+
+  <!-- OUVINTES -->
+  <!-- //  <script src="js/controllers/ouvintesInscritosCtrl.js"></script> -->
+  <!-- //  <script src="js/controllers/ouvinteCtrl.js"></script> -->
+  <!-- //  <script src="js/services/ouvinteAPI.js"></script> -->
+
+  <!-- CONTATOS -->
+  <!-- //  <script src="js/controllers/contatosInscritosCtrl.js"></script> -->
+  <!-- //  <script src="js/controllers/contatoCtrl.js"></script> -->
+  <!-- //  <script src="js/services/contatosAPI.js"></script> -->
+
+  <!-- // <script src="js/services/ouvinteAPI.js"></script> -->
+  <!-- // <script src="js/services/contatoAPI.js"></script> -->
+  <script>
+    $(".button-collapse").sideNav();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="row"></div>
+  <div class="col s10 z-depth-2 offset-s1">
+
+    <div class="row">
+      <h5 class="center">Ficha de Inscrição - {{artigo.autor}}</h5>
+      <div class="divider"></div>
+    </div>
+
+    <form name="artigosForm" id="artigosForm" novalidate class="form-validar">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="autor" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="autor" ng-model="artigo.autor" required>
+          <label for="autor" class="active">Autor</label>
+          <li ng-show="artigosForm.autor.$error.required">Por favor, preencha o campo Autor</li>
+          <li ng-show="artigosForm.autor.$error.pattern">Por favor, digite um Autor no formato de A a Z</li>
+        </div>
+
+      </div>
+      <div class="row ">
+        <div class="input-field col s12 m6">
+          <input id="email" type="email" class="validate" name="email" ng-model="artigo.email" required>
+          <label for="email" class="active">Email</label>
+          <li ng-show="artigosForm.email.$error.required">Por favor, preencha o campo Email</li>
+          <li ng-show="artigosForm.email.$error.email">Por favor, digite um email válido</li>
+
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="telefone" type="text" ng-pattern="/^[0-9]+$/" name="telefone" ng-model="artigo.celular" required>
+          <label for="telefone" class="active">Telefone</label>
+          <li ng-show="artigosForm.telefone.$error.required">Por favor, preencha o campo Telefone</li>
+          <li ng-show="artigosForm.telefone.$error.pattern">Por favor, digite um telefone válido</li>
+
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="input-field col s12">
+          <input id="titulo" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="titulo" ng-model="artigo.titulo" required>
+          <label for="titulo" class="active">Titulo</label>
+          <li ng-show="artigosForm.titulo.$error.required">Por favor, preencha o campo Título</li>
+          <li ng-show="artigosForm.titulo.$error.pattern">Por favor, digite um título válido</li>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m4">
+          <input id="coAutor_1" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="coAutor_1" ng-model="artigo.coaut1">
+          <label for="coAutor_1" class="active">Co-Autor 1</label>
+          <li ng-show="artigosForm.coAutor_1.$error.pattern">Por favor, digite o Nome de um Co-Autor válido</li>
+        </div>
+        <div class="input-field col s12 m4">
+          <input id="coAutor_2" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="coAutor_2" ng-model="artigo.coaut2">
+          <label for="coAutor_2" class="active">Co-Autor 2</label>
+          <li ng-show="artigosForm.coAutor_2.$error.pattern">Por favor, digite o Nome de um Co-Autor válido</li>
+        </div>
+        <div class="input-field col s12 m4">
+          <input id="coAutor_3" type="text" ng-pattern="/^[A-Z, a-z]+$/" name="coAutor_3" ng-model="artigo.coaut3">
+          <label for="coAutor_3" class="active">Co-Autor 3</label>
+          <li ng-show="artigosForm.coAutor_3.$error.pattern">Por favor, digite o Nome de um Co-Autor válido</li>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="input-field col s12">
+          <textarea name="resumo" id="resumo" ng-pattern="/^[A-Z, a-z]+$/" cols="30" rows="10" ng-maxlength="300" class="materialize-textarea" ng-model="artigo.resumo" required></textarea>
+          <label for="resumo" class="active">Resumo</label>
+          <li ng-show="artigosForm.resumo.$error.required">Por favor, preencha com o Resumo</li>
+          <li ng-show="artigosForm.resumo.$error.maxlength">O resumo excedeu o número de caracteres válidos</li>
+          <li ng-show="artigosForm.resumo.$error.pattern">Carácteres Inválidos</li>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <button ng-click="salvar(artigo)" ng-disabled="artigosForm.$invalid" class="btn waves-effect waves-light col s5" type="submit" name="action">Salvar
+            <i class="mdi-content-send right"></i>
+          </button>
+          <button ng-click="validar(artigo)" ng-disabled="isValidate(artigo.status)" class="btn waves-effect waves-light col s5 offset-s2" type="submit" name="action">Validar
+            <i class="mdi-content-send right"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row"></div>
+</div>

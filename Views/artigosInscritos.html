@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="row"></div>
+  <h5 class="center">Artigos Inscritos</h5>
+  <div class="col s12">
+    <div class="col s12">
+      <table class="bordered  centered" ng-show="artigos.length > 0">
+        <thead>
+          <tr>
+            <th data-field="autor">Autor</th>
+            <th data-field="autor" class="hide-on-small-only">Título</th>
+            <th data-field="autor">Status</th>
+            <th data-field="opcoes">Ver mais</th>
+          </tr>
+        </thead>
+
+        <tbody ng-repeat="artigo in artigos" class="">
+          <tr>
+            <td>{{artigo.autor}}</td>
+            <td class="hide-on-small-only">{{artigo.titulo}}</td>
+            <td>{{artigo.status}}</td>
+            <td>
+              <!-- <a ng-href="#/artigo/{{inscricao.id}}">
+                <i class="small mdi-content-add"></i>
+              </a> -->
+              <a ng-href="#/artigo/{{artigo.id}}" class="btn-floating  btn-medium waves-effect waves-light blue">
+                <i class="mdi-content-add"></i>
+              </a>
+              <a ng-click="deletar(artigo.id)" class="btn-floating btn-medium waves-effect waves-light red">
+                <i class="mdi-content-remove"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

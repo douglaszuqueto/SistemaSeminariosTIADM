@@ -1,0 +1,29 @@
+{
+  "name": "Seminarios",
+  "version": "1.0.0",
+  "description": "Sistema de Inscrições - Seminários de TI",
+  "main": "index.html",
+  "keywords": [
+    "Seminarios",
+    "TI",
+    "ADS",
+    "ADS9"
+  ],
+  "authors": [
+    "Douglas Salin Zuqueto"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.0",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "materialize": "~0.96.1"
+  }
+}

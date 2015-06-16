@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="row"></div>
+  <div class="col s10 z-depth-2 offset-s1">
+
+    <div class="row">
+      <h5 class="center">Formulário de Contato</h5>
+      <div class="divider"></div>
+    </div>
+
+    <form class="form-validar" name="contatoForm" id="contatoForm" novalidate>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="nome" type="text" ng-minlength="3" ng-pattern="/^[A-Z, a-z]+$/" name="nome" ng-model="contato.nome" required>
+          <label for="nome" class="active">Nome*</label>
+          <li ng-show="contatoForm.nome.$error.required">Por favor, preencha o campo Nome</li>
+          <li ng-show="contatoForm.nome.$error.pattern">Por favor, digite um Nome válido</li>
+          <li ng-show="contatoForm.nome.$error.minlength">Por favor, o nome deverá contar mais de 3 caracteres</li>
+
+        </div>
+      </div>
+      <div class="row ">
+        <div class="input-field col s12 m6">
+          <input id="email" type="email" class="validate" name="email" ng-model="contato.email" required>
+          <label for="email" class="active">Email*</label>
+          <li ng-show="contatoForm.email.$error.required">Por favor, preencha o campo Email</li>
+          <li ng-show="contatoForm.email.$error.email">Por favor, digite um email válido</li>
+
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="telefone" type="text" ng-pattern="/^[0-9]+$/" name="telefone" ng-model="contato.contato" required>
+          <label for="telefone" class="active">Telefone*</label>
+          <li ng-show="contatoForm.telefone.$error.required">Por favor, preencha o campo Telefone</li>
+          <li ng-show="contatoForm.telefone.$error.pattern">Por favor, digite um Telefone válido</li>
+
+        </div>
+      </div>
+      <div class="row ">
+        <div class="input-field col s12">
+          <textarea name="duvida" id="duvida" ng-pattern="/^[A-Z, a-z]+$/" cols="30" rows="10" class="materialize-textarea" ng-model="contato.mensagem" required></textarea>
+          <label for="duvida" class="active">Dúvida*</label>
+          <li ng-show="contatoForm.duvida.$error.required">Por favor, preencha o campo da sua Dúvida</li>
+          <li ng-show="contatoForm.duvida.$error.pattern">Carácteres inválidos</li>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button ng-click="salvar(contato)" ng-disabled="contatoForm.$invalid" class="btn waves-effect waves-light col s5" type="submit" name="action">Salvar
+            <i class="mdi-content-send right"></i>
+          </button>
+          <button ng-click="validar(contato)" ng-disabled="isValidate(contato.status)" class="btn waves-effect waves-light col s5 offset-s2" type="submit" name="action">Validar
+            <i class="mdi-content-send right"></i>
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="row"></div>
+</div>

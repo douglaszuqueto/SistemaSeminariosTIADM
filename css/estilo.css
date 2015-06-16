@@ -1,0 +1,22 @@
+  body {
+    /*background-image: url('../Imagens/android_1.jpg');*/
+    /*width: 100%;*/
+  }
+  /*.menu {
+    height: 100px !important;
+  }*/
+  /*.menu ul {
+    margin: 15px 0 0 0;
+  }*/
+  .brand-logo img {
+    margin: 5px 0 0 20px;
+    width: 40px;
+  }
+  .form-validar .ng-invalid {
+    border-bottom: 1px solid #F44336;
+    /*box-shadow: 0px 1px 0px 0px #F44336;*/
+  }
+  .form-validar .ng-valid {
+    border-bottom: 1px solid #4CAF50;
+    /*box-shadow: 0px 1px 0px 0px #4CAF50;*/
+  }
